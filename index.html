@@ -37,9 +37,7 @@
   <link rel="stylesheet" type="text/css" href="style.02f4a.css"/>
 
 
-
-  
-<script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
 
   <script 
     async 
@@ -93,6 +91,36 @@
 
 
 
+
+  <!-- 加载 Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+
+  <script>
+  
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAJx0_IWmL0ylRi5hGkcV2lIp87DeMdlB8",
+    authDomain: "blockblast-692d7.firebaseapp.com",
+    databaseURL: "https://blockblast-692d7-default-rtdb.firebaseio.com",
+    projectId: "blockblast-692d7",
+    storageBucket: "blockblast-692d7.firebasestorage.app",
+    messagingSenderId: "86655706471",
+    appId: "1:86655706471:web:bd9c5fdf79a82123487bc2"
+  };
+
+  // Initialize Firebase
+  // 初始化 Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // 暴露给游戏全局
+  window.gameDB = db;
+</script>
+
+
 </head>
 <body>
   <div id="GameDiv" cc_exact_fit_screen="true">
@@ -114,36 +142,7 @@
 <script src="src/import-map.47106.json" type="systemjs-importmap" charset="utf-8"> </script>
 
 <script>
-    System.import('./index.af942.js').catch(function(err) { console.error(err); })
-</script>
-
-
-
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-  // 导入 Authentication 和 Realtime Database SDK
-  import { getDatabase } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js"; // 如果您想用 Realtime Database
-
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAJx0_IWmL0ylRi5hGkcV2lIp87DeMdlB8",
-    authDomain: "blockblast-692d7.firebaseapp.com",
-    databaseURL: "https://blockblast-692d7-default-rtdb.firebaseio.com",
-    projectId: "blockblast-692d7",
-    storageBucket: "blockblast-692d7.firebasestorage.app",
-    messagingSenderId: "86655706471",
-    appId: "1:86655706471:web:bd9c5fdf79a82123487bc2"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
-  // 获取 Authentication 和 Realtime Database 的服务实例
-  const database = getDatabase(app); // 现在您可以使用 database 对象来读写排行榜数据
-
-  // TODO: 现在您可以使用 auth 和 database 对象来实现您的排行榜功能了！
+    System.import('./index.4d876.js').catch(function(err) { console.error(err); })
 </script>
 
 </body>
